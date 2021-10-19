@@ -1,0 +1,44 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mahasiswa          |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+5 rows in set (0.11 sec)
+ 
+mysql> USE mahasiswa;
+Database changed
+ 
+mysql> CREATE TABLE daftar_jurusan ( kode_jurusan CHAR(5), 
+nama_jurusan VARCHAR(20),alamat VARCHAR(100),
+jumlah_mahasiswa SMALLINT );
+Query OK, 0 rows affected (0.05 sec)
+ 
+mysql> DESC daftar_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat           | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | smallint(6)  | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+####################################################################
+mysql> ALTER TABLE daftar_jurusan MODIFY jumlah_mahasiswa MEDIUMINT; //mengubah query tipe data menjadi mediumint
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> DESC daftar_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat           | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | mediumint(9) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
