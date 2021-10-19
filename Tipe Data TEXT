@@ -1,0 +1,25 @@
+mysql> CREATE TABLE contoh_text (tin TINYTEXT, tex TEXT, 
+lon LONGTEXT);
+Query OK, 0 rows affected (0.05 sec)
+ 
+mysql> DESC contoh_text;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| tin   | tinytext | YES  |     | NULL    |       |
+| tex   | text     | YES  |     | NULL    |       |
+| lon   | longtext | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.09 sec)
+ 
+mysql> INSERT INTO contoh_text values ('duniailkom',
+'duniailkom','duniailkom.com');
+Query OK, 1 row affected (0.04 sec)
+ 
+mysql> SELECT * FROM contoh_text;
++------------+------------+----------------+
+| tin        | tex        | lon            |
++------------+------------+----------------+
+| duniailkom | duniailkom | duniailkom.com |
++------------+------------+----------------+
+1 row in set (0.00 sec)
