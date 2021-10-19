@@ -1,0 +1,26 @@
+mysql> CREATE TABLE contoh_date (dat DATE, tim TIME, dattim DATETIME, 
+timestam TIMESTAMP, yea YEAR);
+Query OK, 0 rows affected (0.06 sec)
+ 
+mysql> DESCRIBE contoh_date;
++----------+-----------+------+-----+-------------------+-----------------------------+
+| Field    | Type      | Null | Key | Default           | Extra                       |
++----------+-----------+------+-----+-------------------+-----------------------------+
+| dat      | date      | YES  |     | NULL              |                             |
+| tim      | time      | YES  |     | NULL              |                             |
+| dattim   | datetime  | YES  |     | NULL              |                             |
+| timestam | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| yea      | year(4)   | YES  |     | NULL              |                             |
++----------+-----------+------+-----+-------------------+-----------------------------+
+5 rows in set (0.01 sec)
+#######################################################################################
+mysql> INSERT INTO contoh_date values (NOW(),NOW(),NOW(),NOW(),'2012');
+Query OK, 1 row affected, 1 warning (0.05 sec)
+ 
+mysql> SELECT * FROM contoh_date;
++------------+----------+---------------------+---------------------+------+
+| dat        | tim      | dattim              | timestam            | yea  |
++------------+----------+---------------------+---------------------+------+
+| 2012-10-20 | 19:40:45 | 2012-10-20 19:40:45 | 2012-10-20 19:40:45 | 2012 |
++------------+----------+---------------------+---------------------+------+
+1 row in set (0.00 sec)
