@@ -1,0 +1,19 @@
+mysql> CREATE TABLE contoh_cha (cha CHAR(5), 
+varcha VARCHAR(5));
+Query OK, 0 rows affected (0.06 sec)
+ 
+mysql> INSERT INTO contoh_cha values ('a  ','a  ');
+Query OK, 1 row affected (0.05 sec)
+mysql> INSERT INTO contoh_cha values ('dunia','dunia');
+Query OK, 1 row affected (0.05 sec)
+mysql> INSERT INTO contoh_cha values ('duniailkom','duniailkom');
+ERROR 1406 (22001): Data too long for column 'cha' at row 1
+ 
+mysql> SELECT * FROM contoh_cha;
++-------+--------+
+| cha   | varcha |
++-------+--------+
+| a     | a      |
+| dunia | dunia  |
++-------+--------+
+2 rows in set (0.00 sec)
