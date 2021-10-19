@@ -1,0 +1,25 @@
+mysql> CREATE TABLE contoh_blob (tin TINYBLOB, blo BLOB, 
+lon LONGBLOB);
+Query OK, 0 rows affected (0.14 sec)
+ 
+mysql> DESCRIBE contoh_blob;
+ +-------+----------+------+-----+---------+-------+
+ | Field | Type     | Null | Key | Default | Extra |
+ +-------+----------+------+-----+---------+-------+
+ | tin   | tinyblob | YES  |     | NULL    |       |
+ | blo   | blob     | YES  |     | NULL    |       |
+ | lon   | longblob | YES  |     | NULL    |       |
+ +-------+----------+------+-----+---------+-------+
+ 3 rows in set (0.01 sec)
+ 
+mysql> INSERT INTO contoh_blob values ('duniailkom',
+'duniailkom','duniailkom.com');
+Query OK, 1 row affected (0.05 sec)
+ 
+mysql> SELECT * FROM contoh_blob;
+ +------------+------------+----------------+
+ | tin        | blo        | lon            |
+ +------------+------------+----------------+
+ | duniailkom | duniailkom | duniailkom.com |
+ +------------+------------+----------------+
+ 1 row in set (0.01 sec)
