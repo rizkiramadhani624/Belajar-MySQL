@@ -1,0 +1,13 @@
+mysql> ALTER TABLE daftar_jurusan DROP ketua_jurusan;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+ 
+mysql> DESC daftar_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat_jurusan   | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | mediumint(9) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
