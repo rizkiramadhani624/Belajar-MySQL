@@ -1,0 +1,41 @@
+mysql> CREATE TABLE contoh_att (no int AUTO_INCREMENT, 
+nama VARCHAR(30) NOT NULL,umur TINYINT UNSIGNED DEFAULT '10', 
+kodepos CHAR(5) NULL,PRIMARY KEY(no));
+Query OK, 0 rows affected (0.13 sec)
+ 
+mysql> DESCRIBE contoh_att;
++---------+---------------------+------+-----+---------+----------------+
+| Field   | Type                | Null | Key | Default | Extra          |
++---------+---------------------+------+-----+---------+----------------+
+| no      | int(11)             | NO   | PRI | NULL    | auto_increment |
+| nama    | varchar(30)         | NO   |     | NULL    |                |
+| umur    | tinyint(3) unsigned | YES  |     | 10      |                |
+| kodepos | char(5)             | YES  |     | NULL    |                |
++---------+---------------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+ 
+mysql> INSERT INTO contoh_att VALUES (NULL,'Joko',NULL,20155);
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> INSERT INTO contoh_att VALUES (0,'Amir',23,27118);
+Query OK, 1 row affected (0.05 sec)
+ 
+mysql> INSERT INTO contoh_att VALUES (6,'Thasya',24,30012);
+Query OK, 1 row affected (0.04 sec)
+ 
+mysql> INSERT INTO contoh_att VALUES (9,NULL,32,10099);
+ERROR 1048 (23000): Column 'nama' cannot be null
+ 
+mysql> INSERT INTO contoh_att VALUES (NULL,'Rina',21,10889);
+Query OK, 1 row affected (0.05 sec)
+ 
+mysql> SELECT * FROM contoh_att;
++----+--------+------+---------+
+| no | nama   | umur | kodepos |
++----+--------+------+---------+
+|  1 | Joko   | NULL | 20155   |
+|  2 | Amir   |   23 | 27118   |
+|  6 | Thasya |   24 | 30012   |
+|  7 | Rina   |   21 | 10889   |
++----+--------+------+---------+
+4 rows in set (0.00 sec)
