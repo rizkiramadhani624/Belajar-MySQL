@@ -1,0 +1,48 @@
+mysql> ALTER TABLE daftar_jurusan CHANGE alamat alamat_jurusan VARCHAR(100);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+ 
+mysql> DESC daftar_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat_jurusan   | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | mediumint(9) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+//ini data sebelum diubah nama kolomnya
+##################################################################
+mysql> ALTER TABLE daftar_jurusan RENAME TO tabel_jurusan;
+Query OK, 0 rows affected (0.06 sec)
+ 
+mysql> DESC daftar_jurusan;
+ERROR 1146 (42S02): Table 'mahasiswa.daftar_jurusan' doesn't exist
+ 
+mysql> DESC tabel_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat_jurusan   | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | mediumint(9) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+//ini data yang sudah diubah nama kolomnya dengan RENAME TO
+##################################################################
+mysql> RENAME TABLE tabel_jurusan TO daftar_jurusan;
+Query OK, 0 rows affected (0.07 sec)
+ 
+mysql> DESC tabel_jurusan;
+ERROR 1146 (42S02): Table 'mahasiswa.tabel_jurusan' doesn't exist
+ 
+mysql> DESC daftar_jurusan;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| kode_jurusan     | char(5)      | YES  |     | NULL    |       |
+| nama_jurusan     | varchar(20)  | YES  |     | NULL    |       |
+| alamat_jurusan   | varchar(100) | YES  |     | NULL    |       |
+| jumlah_mahasiswa | mediumint(9) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+//ini data yang diubah nama kolomnya dengan TO
