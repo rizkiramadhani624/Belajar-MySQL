@@ -1,0 +1,30 @@
+mysql> SELECT * FROM daftar_dosen;
++------------+----------------+------------+-----------+
+| NIP        | nama_dosen     | no_hp      | alamat    |
++------------+----------------+------------+-----------+
+| 0260432002 | Maya Ari Putri | 0812345234 | Palembang |
+| 0275430005 | Susi Indriani  | 0812656532 | Bogor     |
+| 0576431001 | M. Siddiq      | 0812979005 | Jakarta   |
+| 0770435006 | Siswanto       | 0812567765 | Medan     |
+| 0869437003 | Andi Mulia     | 0812332564 | Padang    |
+| 1080432007 | Arif Budiman   | 0812456345 | Makasar   |
++------------+----------------+------------+-----------+
+ 
+mysql> LOAD DATA LOCAL INFILE 'D:\\MySQL\\data_lagi.txt' REPLACE
+INTO TABLE daftar_dosen FIELDS TERMINATED BY '\t'
+ENCLOSED BY '\'' LINES STARTING BY '**' TERMINATED BY '|'
+IGNORE 1 LINES;
+ 
+mysql> SELECT * FROM daftar_dosen;
++------------+----------------+------------+-----------+
+| NIP        | nama_dosen     | no_hp      | alamat    |
++------------+----------------+------------+-----------+
+| 0160436012 | Sabrina Sari   | 0812349900 | Pekanbaru |
+| 0260432002 | Maya Ari Putri | 0812345234 | Palembang |
+| 0275430005 | Susi Indriani  | 0812656532 | Bogor     |
+| 0480432066 | Tia Santrini   | 0812451177 | Padang    |
+| 0576431001 | M. Siddiq      | 0812979005 | Jakarta   |
+| 0770435006 | Rubin Hadi     | 0812567678 | Papua     |
+| 0869437003 | Mustalifah     | 0812338877 | Aceh      |
+| 1080432007 | Arif Budiman   | 0812456345 | Makasar   |
++------------+----------------+------------+-----------+
