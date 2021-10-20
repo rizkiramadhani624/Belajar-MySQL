@@ -1,0 +1,40 @@
+mysql> TRUNCATE mata_kuliah; //Truncate adalah query untuk mengosongkan niali di dalam tabel 
+ 
+mysql> INSERT INTO mata_kuliah 
+(kode_matkul,nama_matkul,jumlah_SKS,nama_jurusan) 
+VALUES ('MMDAS','Matematika Dasar',4,'Matematika');
+ 
+mysql> select * from mata_kuliah;
++-------------+------------------+------------+--------------+
+| kode_matkul | nama_matkul      | jumlah_SKS | nama_jurusan |
++-------------+------------------+------------+--------------+
+| MMDAS       | Matematika Dasar |          4 | Matematika   |
++-------------+------------------+------------+--------------+
+###############################################################################################
+mysql> INSERT INTO mata_kuliah 
+(nama_jurusan, kode_matkul, jumlah_SKS, nama_matkul)
+VALUES ('Ilmu Komputer', 'JRKOM',2,'Jaringan Komputer');//contoh kondisi pengisian niali dalam tabel secara acak 
+                                                        //nilai default 2, so jika kita tdk mengisi nilai data tersebut selanjutnya, maka nilai data akan auto menjadi nilai tersebut
+mysql> select * from mata_kuliah;
++-------------+-------------------+------------+---------------+
+| kode_matkul | nama_matkul       | jumlah_SKS | nama_jurusan  |
++-------------+-------------------+------------+---------------+
+| JRKOM       | Jaringan Komputer |          2 | Ilmu Komputer |
+| MMDAS       | Matematika Dasar  |          4 | Matematika    |
++-------------+-------------------+------------+---------------+
+##############################################################################################
+mysql> INSERT INTO mata_kuliah (kode_matkul,nama_matkul,nama_jurusan) 
+VALUES ('FIDAS','Fisika Dasar','Fisika'), 
+('CITRA','Pengolahan CITRA','Ilmu Komputer'), 
+('PBASE','Pengantar Database','Ilmu Komputer'); //lihatlah nilai jumlah_SKS auto menjadi 2 dikarenakan nilainya kosong
+ 
+mysql> select * from mata_kuliah;
++-------------+--------------------+------------+---------------+
+| kode_matkul | nama_matkul        | jumlah_SKS | nama_jurusan  |
++-------------+--------------------+------------+---------------+
+| CITRA       | Pengolahan CITRA   |          2 | Ilmu Komputer |
+| FIDAS       | Fisika Dasar       |          2 | Fisika        |
+| JRKOM       | Jaringan Komputer  |          2 | Ilmu Komputer |
+| MMDAS       | Matematika Dasar   |          4 | Matematika    |
+| PBASE       | Pengantar Database |          2 | Ilmu Komputer |
++-------------+--------------------+------------+---------------+
