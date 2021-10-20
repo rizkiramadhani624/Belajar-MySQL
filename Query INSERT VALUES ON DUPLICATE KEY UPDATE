@@ -1,0 +1,30 @@
+mysql> select * from mata_kuliah;
++-------------+--------------------+------------+---------------+
+| kode_matkul | nama_matkul        | jumlah_SKS | nama_jurusan  |
++-------------+--------------------+------------+---------------+
+| CITRA       | Pengolahan CITRA   |          2 | Ilmu Komputer |
+| FIDAS       | Fisika Dasar       |          2 | Fisika        |
+| JRKOM       | Jaringan Komputer  |          2 | Ilmu Komputer |
+| MMDAS       | Matematika Dasar   |          4 | Matematika    |
+| PBASE       | Pengantar Database |          2 | Ilmu Komputer |
+| STATS       | Statistika         |          4 | Matematika    |
++-------------+--------------------+------------+---------------+
+ 
+mysql> INSERT INTO mata_kuliah 
+(kode_matkul,nama_matkul, jumlah_SKS ,nama_jurusan) 
+VALUES ('CITRA','Pengantar CITRA',4,'Ilmu Komputer') 
+ON DUPLICATE KEY UPDATE nama_matkul='Pengantar CITRA';
+//query on duplicate key update adalah fungsi yg memaksa sql memasukkan data dan apabila ada data yg sama sebelumnya 
+//memberikan opsi untuk mengganti sebagian data yang lain 
+ 
+mysql> select * from mata_kuliah;
++-------------+--------------------+------------+---------------+
+| kode_matkul | nama_matkul        | jumlah_SKS | nama_jurusan  |
++-------------+--------------------+------------+---------------+
+| CITRA       | Pengantar CITRA    |          2 | Ilmu Komputer |
+| FIDAS       | Fisika Dasar       |          2 | Fisika        |
+| JRKOM       | Jaringan Komputer  |          2 | Ilmu Komputer |
+| MMDAS       | Matematika Dasar   |          4 | Matematika    |
+| PBASE       | Pengantar Database |          2 | Ilmu Komputer |
+| STATS       | Statistika         |          4 | Matematika    |
++-------------+--------------------+------------+---------------+
