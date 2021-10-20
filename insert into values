@@ -1,0 +1,36 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mahasiswa          |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+ 
+mysql> USE mahasiswa;
+Database changed
+ 
+mysql> CREATE TABLE mata_kuliah (kode_matkul CHAR(5) PRIMARY KEY, 
+nama_matkul VARCHAR(50) NOT NULL, jumlah_SKS TINYINT UNSIGNED DEFAULT '2',
+nama_jurusan VARCHAR(50));
+ 
+mysql> DESC mata_kuliah;
++--------------+---------------------+------+-----+---------+-------+
+| Field        | Type                | Null | Key | Default | Extra |
++--------------+---------------------+------+-----+---------+-------+
+| kode_matkul  | char(5)             | NO   | PRI | NULL    |       |
+| nama_matkul  | varchar(50)         | NO   |     | NULL    |       |
+| jumlah_SKS   | tinyint(3) unsigned | YES  |     | 2       |       |
+| nama_jurusan | varchar(50)         | YES  |     | NULL    |       |
++--------------+---------------------+------+-----+---------+-------+
+##########################################################################
+mysql> INSERT INTO mata_kuliah VALUES ('KIMDA','Kimia Dasar',2,' Kimia'); //insert into values
+ 
+mysql> select * from mata_kuliah;
++-------------+-------------+------------+--------------+
+| kode_matkul | nama_matkul | jumlah_SKS | nama_jurusan |
++-------------+-------------+------------+--------------+
+| KIMDA       | Kimia Dasar |          2 |  Kimia       |
++-------------+-------------+------------+--------------+
