@@ -25,8 +25,8 @@ mysql> DESC mata_kuliah;
 | jumlah_SKS   | tinyint(3) unsigned | YES  |     | 2       |       |
 | nama_jurusan | varchar(50)         | YES  |     | NULL    |       |
 +--------------+---------------------+------+-----+---------+-------+
-##########################################################################
-mysql> INSERT INTO mata_kuliah VALUES ('KIMDA','Kimia Dasar',2,' Kimia'); //insert into values
+#######################################################################################################
+mysql> INSERT INTO mata_kuliah VALUES ('KIMDA','Kimia Dasar',2,' Kimia'); //insert into values 1 nilai
  
 mysql> select * from mata_kuliah;
 +-------------+-------------+------------+--------------+
@@ -34,3 +34,16 @@ mysql> select * from mata_kuliah;
 +-------------+-------------+------------+--------------+
 | KIMDA       | Kimia Dasar |          2 |  Kimia       |
 +-------------+-------------+------------+--------------+
+################################################################################################
+mysql> INSERT INTO mata_kuliah VALUES
+('MMDAS','Matematika Dasar',4,'Matematika'), 
+('JRKOM','Jaringan Komputer',2,'Ilmu Komputer');//cara penambahan nilai value lebih dari 1
+
+mysql> select * from mata_kuliah;
++-------------+-------------------+------------+---------------+
+| kode_matkul | nama_matkul       | jumlah_SKS | nama_jurusan  |
++-------------+-------------------+------------+---------------+
+| JRKOM       | Jaringan Komputer |          2 | Ilmu Komputer |
+| KIMDA       | Kimia Dasar       |          2 |  Kimia        |
+| MMDAS       | Matematika Dasar  |          4 | Matematika    |
++-------------+-------------------+------------+---------------+
